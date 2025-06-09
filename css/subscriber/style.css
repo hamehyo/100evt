@@ -486,6 +486,15 @@ section .evt_gift_box .txt strong{
 	position: relative;
 	max-width: 1039px;
 	width: 100%;
+	animation: downup 0.8s ease-in-out;
+}
+@keyframes downup {
+    from {
+        margin-top: 70px;
+    }
+    to { 
+        margin-top: 0;
+    }
 }
 .visual_section .v_tit_box .num_hundred{
 	position: absolute;
@@ -497,23 +506,6 @@ section .evt_gift_box .txt strong{
 .visual_section .v_tit_box .num_hundred > img{
 	width: 100%;
 }
-/*
-.visual_section .v_tit_box .hachi_01{
-	right: 33%;
-    bottom: -15%;
-	transform: translate(-50%,-50%);
-}
-.visual_section .v_tit_box .hachi_02{
-	right: 23%;
-    bottom: -7%;
-	transform: translate(-50%,-50%);
-}
-*/
-
-
-
-
-
 .visual_section .v_tit_box .thumb_up{
 	right: 13%;
     top: 3%;
@@ -529,7 +521,6 @@ section .evt_gift_box .txt strong{
 }
 .visual_section .deco_box img{
 	position: absolute;
-	/* transform: translate(-50%,-50%); */
 }
 .visual_section .deco_box .v_star{
 	left: calc(50% - 265px);

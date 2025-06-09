@@ -6,12 +6,12 @@ $(function(){
 
     //scoll to top
     $(window).on("scroll resize", function() {
-
         // event navbar fixed
         let scrollPos = $(document).scrollTop();
         let visualH = $(".visual_section").outerHeight();
-        let bodyH = $("body").outerHeight();
         let navHeight = $(".evt_list").outerHeight();
+        let innerH = $(window).innerHeight();
+        let scrollH = $('body').prop('scrollHeight');
 
         if( visualH < scrollPos ){
             $(".evt_list_conts").addClass("fixed");
@@ -22,14 +22,10 @@ $(function(){
             $(".evt_list li").removeClass("active");
             $(".evt_list li:nth-child(1)").addClass("active");
         }
-        
-        let innerH = $(window).innerHeight();
-        let scrollH = $('body').prop('scrollHeight');
         if (scrollPos + innerH >= scrollH) {
             $(".evt_list li").removeClass("active");
             $(".evt_list li:nth-child(4)").addClass("active");
         }
-
         $(".evt_list li a").each(function (){
             let linkRef = $($(this).attr("href"));
             let refPos = linkRef.offset().top - navHeight - 80;
@@ -39,22 +35,12 @@ $(function(){
                 $(this).parent("li").addClass("active");
             }
         });
-        
         var $share = $(".scroll_box");
         if ($( document ).scrollTop() > 200) {
             $share.fadeIn();
         } else {
             $share.fadeOut();
         }
-
-        /* 
-        if ($(this).scrollTop() > 100) {
-            $('#scrollToTop').fadeIn();
-        } else {
-            $('#scrollToTop').fadeOut();
-        }
-        */
-
 
     }); 
 
@@ -67,9 +53,18 @@ $(function(){
         e.preventDefault();
     });
 
-
-
     /* visual motion */
+    let million_txt = new TimelineMax();
+    let mil = $(".v_tit_box .num_hundred img");
+
+    million_txt.add([
+        gsap.fromTo(mil, { y: -800, opacity: 0 }, { y: 0, opacity: 1, duration: 0.6, delay : 0.8, ease:Expo.easeOut } ),
+    ]).add([
+        gsap.fromTo(mil, { y: 80, rotation: 1080, opacity: 0 }, { y: 0, rotation: 0, opacity: 1, duration: 1,  ease:Expo.easeOut } ),
+    ]).add([
+        gsap.fromTo(mil, { scale: 0.98 }, { scale: 1.1, duration: 1, repeat: -1, yoyo: true, ease: Power2.easeInOut }),
+    ]);
+
     let hachi = $(".visual_section .v_hachi"),
         moo = $(".visual_section .v_moo"),
         ho = $(".visual_section .v_ho"),
@@ -77,31 +72,15 @@ $(function(){
         young = $(".visual_section .v_young"),
         lt_fire = $(".visual_section .lt_fire");
 
-    // gsap.fromTo( hachi, { y:-6 }, { y: 3, duration: 1.6, repeat: -1, yoyo: true, ease: Power2.easeInOut } );
-    // gsap.fromTo( joo, { x:4 }, { x: 0, duration: 1.6, repeat: -1, yoyo: true, ease: Power2.easeInOut } );
-    // gsap.fromTo( young, { y: 4 }, { y: -2, duration: 1.6, repeat: -1, yoyo: true, ease: Power2.easeInOut });
-    // gsap.fromTo( moo, { x : 3, y: -4 }, { x : 0, y: 2, duration: 1.6, repeat: -1, yoyo: true, ease: Power2.easeInOut });
-    // gsap.fromTo( ho, { x : -3, y: 4 }, { x : 0, y: 0, duration: 1.6, repeat: -1, yoyo: true, ease: Power2.easeInOut });
-
-
-
+    gsap.fromTo( hachi, { y: -6 }, { y: 3, duration: 1.6, repeat: -1, yoyo: true, ease: Power2.easeInOut } );
+    gsap.fromTo( joo, { x: 4 }, { x: 0, duration: 1.6, repeat: -1, yoyo: true, ease: Power2.easeInOut } );
+    gsap.fromTo( young, { y: 4 }, { y: -2, duration: 1.6, repeat: -1, yoyo: true, ease: Power2.easeInOut });
+    gsap.fromTo( moo, { x : 3, y: -4 }, { x : 0, y: 2, duration: 1.6, repeat: -1, yoyo: true, ease: Power2.easeInOut });
+    gsap.fromTo( ho, { x : -3, y: 4 }, { x : 0, y: 0, duration: 1.6, repeat: -1, yoyo: true, ease: Power2.easeInOut });
+    gsap.fromTo(lt_fire, { scale: 0, opacity: 0 }, { scale: 1.2, opacity: 1, duration: 1.8, repeat: -1, yoyo: true, ease: Power2.easeInOut });
 
     let box_shadow = $(".random_box .random_box_inner img");
-
-   // gsap.fromTo( box_shadow, { y:-4 }, { y: 2, duration: 1.2, repeat: -1, yoyo: true, ease: Power2.easeInOut } );
-
-
-    let million_txt = new TimelineMax();
-    let mil = $(".v_tit_box .num_hundred img");
-
-    // million_txt.add([
-    //     gsap.fromTo(mil, { y:80, rotation:960, opacity:0 }, { y:0, rotation:0, opacity:1, duration:0.8, ease:Expo.easeOut } ),
-    // ]).add([
-    //     gsap.fromTo(mil, { scale:0.98 }, { scale:1.1, duration:1, repeat:-1, yoyo:true, ease:Power2.easeInOut } ),
-    // ]);
-
-
-
+    gsap.fromTo( box_shadow, { y:-4 }, { y: 2, duration: 1.2, repeat: -1, yoyo: true, ease: Power2.easeInOut } );
 
     /* random box popup open */
     let box = $(".box_inner .box"),
@@ -123,53 +102,33 @@ $(function(){
         e.preventDefault();
     });
 
-    /* popup close */
+    /* random box popup close */
     $(".rdm_popup_close").on("click", function(e){
         $(".rdm_popup_wrap").fadeOut();
         $(".btn_rdm_open").show();
         e.preventDefault();
     });
 
+    /* note text  */
+    $(".note_toggle_box dt").on("click", function(){
+        $(this).toggleClass("on");
+        $(this).next("dd").slideToggle(400);
+    });
 
-
-
-
-
-
-
-
-
-
-    var $toggle_share = $('#toggle_share'),
-        $share_list = $('#share_list');
+    /* mobile share btn toggle  */
+    var $toggle_share = $("#toggle_share"),
+        $share_list = $("#share_list");
 
     $toggle_share.click(function(e){
         $(this).toggleClass('on');
         $share_list.stop(true, true).slideToggle(200);
         e.preventDefault();
     });
-
-    $('.btn_box .goTop').click(function(e){
-        $('body,html').animate({scrollTop:0},400);
+    $(".btn_box .goTop").click(function(e){
+        $("body, html").animate( {scrollTop:0}, 400 );
         e.preventDefault();
     });
 
-
-
-
-
-
-
-
-
-
-
-
-    // note
-    $(".note_toggle_box dt").on("click", function(){
-        $(this).toggleClass("on");
-        $(this).next("dd").slideToggle(400);
-    });
 
 
 });
