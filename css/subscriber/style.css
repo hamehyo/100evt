@@ -1618,7 +1618,7 @@ section .evt_gift_box .txt strong{
 	display: none;
 }
 .evt04_section .evt_way_box .step_box.two .capture_way .step_txt span img{
-	vertical-align: top;
+	padding: 0 0 0 2px;
 }
 .evt04_section .evt_way_box .step_box.three{
 	padding:0;
@@ -2934,6 +2934,7 @@ section .evt_gift_box .txt strong{
 	}
 	.evt04_section .evt_way_box .step_box.two .capture_way .step_txt span img {
 		margin: 0px 0 1px 1px;
+		padding: 0;
 		vertical-align: bottom;
 		width: 11px;
 	}
