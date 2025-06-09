@@ -2733,7 +2733,7 @@ section .evt_gift_box .txt strong{
 		padding: 0 20px 20px;
 	}
 	.evt02_section .evt_test_box .text_list li .go_solve {
-		padding: 12px 0;
+		padding: 11px 0 12px;
 	}
 	.evt02_section .evt_test_box .text_list li .go_solve span::after {
 		width: 10px;
@@ -3176,8 +3176,9 @@ section .evt_gift_box .txt strong{
 
 	/* seoul_reader_section */
 	.seoul_reader_section .sns_list li a{
-		width: 44px;
-		height: 50px;
+		margin: 0 -4px;
+		width: 58px;
+        height: 58px;
 	}
 
 
