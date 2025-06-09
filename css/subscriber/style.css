@@ -1250,7 +1250,7 @@ section .evt_gift_box .txt strong{
 	color: #666;
 }
 .evt02_section .evt_gift_box .evt02_nt_list dd ul li .pink{
-	font-weight: 400;
+	font-weight: 700;
 	color: #ff3fae;
 }
 
@@ -1317,7 +1317,6 @@ section .evt_gift_box .txt strong{
 	z-index: 2;
 }
 .evt03_section .letter_box .letter_nt_list li{
-
 	position: relative;
 	padding-left: 15px;
 	line-height: 1.5;
