@@ -3175,12 +3175,7 @@ section .evt_gift_box .txt strong{
 	}
 
 
-	/* seoul_reader_section */
-	.seoul_reader_section .sns_list li a{
-		margin: 0 -4px;
-		width: 58px;
-        height: 58px;
-	}
+	
 
 
 
@@ -3190,10 +3185,8 @@ section .evt_gift_box .txt strong{
 
 	/* seoul_reader_section */
 	.seoul_reader_section .sns_list li a{
-		width: 40px;
-		height: 46px;
+		margin: 0 -4px;
 	}
-
 
 
     #toggle_share { 
