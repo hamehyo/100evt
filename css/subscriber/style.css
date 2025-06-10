@@ -2930,6 +2930,7 @@ section .evt_gift_box .txt strong{
 		width: 50%;
 	}
 	.seoul_reader_section .sns_list li a{
+		margin: 0 -5px;
 		width: 60px;
 		height: 60px;
 	}
@@ -3135,11 +3136,6 @@ section .evt_gift_box .txt strong{
 
 @media only screen and (max-width: 400px){
 
-	/* seoul_reader_section */
-	.seoul_reader_section .sns_list li a{
-		margin: 0 -4px;
-	}
-
 	/* scrollbox */
     #toggle_share { 
 		width:50px;
@@ -3163,6 +3159,7 @@ section .evt_gift_box .txt strong{
 	}
 
 
+	
 
 }
 
